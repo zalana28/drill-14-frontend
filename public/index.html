@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>notevault — notes</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <h1>notevault</h1>
+  <p class="subtitle">Simple notes. Nothing else.</p>
+</header>
+
+<main>
+  <section aria-labelledby="create-heading">
+    <h2 id="create-heading">New note</h2>
+    <form id="create-form" novalidate>
+      <div class="field">
+        <label for="title-input">Title</label>
+        <input id="title-input" name="title" type="text" maxlength="201"
+               autocomplete="off" aria-describedby="title-error" required>
+        <p class="field-error" id="title-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="body-input">Body</label>
+        <textarea id="body-input" name="body" rows="4"
+                  aria-describedby="body-error"></textarea>
+        <p class="field-error" id="body-error" hidden></p>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+      <button type="submit" id="create-button">Save note</button>
+    </form>
+  </section>
+
+  <section aria-labelledby="notes-heading">
+    <h2 id="notes-heading">Notes</h2>
+    <p id="list-status" aria-live="polite"></p>
+    <div id="list-error" role="alert" hidden>
+      <p id="list-error-text"></p>
+      <button type="button" id="retry-button">Retry</button>
+    </div>
+    <ul id="notes-list"></ul>
+    <p id="empty-state" hidden>No notes yet. Write your first one above.</p>
+  </section>
+
+  <p id="status" aria-live="polite"></p>
+</main>
+
+<dialog id="delete-dialog" aria-labelledby="delete-dialog-title">
+  <h2 id="delete-dialog-title">Delete this note?</h2>
+  <p id="delete-dialog-text"></p>
+  <p class="form-error" id="delete-error" role="alert" hidden></p>
+  <div class="dialog-actions">
+    <button type="button" id="delete-cancel">Cancel</button>
+    <button type="button" id="delete-confirm" class="danger">Delete</button>
+  </div>
+</dialog>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>

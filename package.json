@@ -1,0 +1,1 @@
+{"description":"notevault-ui: zero-build vanilla frontend for the notevault API (Drill #14)","devDependencies":{"playwright-core":"^1.49.0"},"name":"drill-14-frontend","private":true,"scripts":{"screenshots":"node scripts/screenshot.js","start":"node server.js","test":"node --test tests/ui.spec.js"},"type":"commonjs","version":"1.0.0"}
